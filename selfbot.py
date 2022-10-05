@@ -1,6 +1,6 @@
 import discord, asyncio, os
 from discord.ext import commands
-bot = commands.Bot(command_prefix = '.', help_cmmand = None, self_bot = True)
+bot = commands.Bot(command_prefix = '.', help_command = None, self_bot = True)
 @bot.event
 async def on_ready():
     print(bot.user.name)

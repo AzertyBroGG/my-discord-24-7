@@ -1,4 +1,5 @@
-import discord, os, asyncio
+import discum as discord
+import os, asyncio
 from discord.ext import commands
 bot = discord.Client(self_bot = True)
-bot.run(os.getenv('TOKEN'))
+bot.gateway.run(os.getenv('TOKEN'))

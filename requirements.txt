@@ -1,0 +1,2 @@
+asyncio
+py-cord

@@ -7,8 +7,8 @@ async def on_ready():
     print(bot.user.id)
 @bot.command()
 async def help(ctx):
-    await ctx.send('Я Азерти')
+    await ctx.send(embed = discord.Embed(title = 'Я Азерти', color = discord.Color.random()))
 @bot.command()
 async def ping(ctx):
-    await ctx.send(f'Задержка бота — {bot.latency}')
+    await ctx.send(f'Задержка бота — {round(bot.latency*1000):1000} секунд')
 bot.run(os.getenv('TOKEN'))

@@ -1,5 +1,5 @@
 asyncio
 discord.py-self
-discord.py-self-embed
+discord-webhook
 requests
 bs4

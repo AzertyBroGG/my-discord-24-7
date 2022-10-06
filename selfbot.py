@@ -12,5 +12,5 @@ async def help(ctx):
     await ctx.send(embed = discord.Embed(title = 'Я Азерти', color = discord.Color.random()))
 @bot.command()
 async def ping(ctx):
-    await ctx.send(f'Задержка бота — {round(bot.latency*1000):1000} секунд')
+    await ctx.send(f'Задержка бота — {round(bot.latency*1000)/1000} секунд')
 bot.run(os.getenv('TOKEN'))

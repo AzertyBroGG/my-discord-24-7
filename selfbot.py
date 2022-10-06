@@ -25,7 +25,7 @@ async def on_message(message):
 @bot.command()
 async def help(ctx):
     emb = Embed(title = 'Я Азерти SelfBot')
-    url = emb.generate_url(hide_url=True)
+    url = emb.generate_url()
     await ctx.send(url)
 @bot.command()
 async def ping(ctx):

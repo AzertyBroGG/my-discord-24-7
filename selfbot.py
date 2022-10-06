@@ -13,6 +13,7 @@ async def on_message(message):
         return
     if isinstance(message.channel, discord.DMChannel):
         await message.channel.send('Привет! Я автоответчик **Azerty**...')
+    bot.process_commands(message)
 @bot.command()
 async def help(ctx):
     emb = discord.Embed(title = 'Я Азерти', color = discord.Color.random())

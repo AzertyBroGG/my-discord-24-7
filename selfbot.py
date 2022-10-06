@@ -24,8 +24,8 @@ async def on_message(message):
     
 @bot.command()
 async def help(ctx):
-    emb = discord.Embed(title = 'Я Азерти', color = discord.Color.random())
-    await ctx.send('Embed', embed = emb)
+    emb = Embed(title = 'Я Азерти', color = discord.Color.random())
+    await ctx.send(emb.generate_url(hide_url = True))
 @bot.command()
 async def ping(ctx):
     await ctx.send(f'Задержка бота — {round(bot.latency*1000)/1000} секунд')

@@ -1,5 +1,6 @@
 import discord, asyncio, os
 from discord.ext import commands
+users = []
 bot = commands.Bot(command_prefix = '.', help_command = None, self_bot = True)
 @bot.event
 async def on_ready():
@@ -12,8 +13,13 @@ async def on_message(message):
     if message.author.id == bot.user.id:
         return
     if isinstance(message.channel, discord.DMChannel):
-        await message.channel.send('Привет! Я автоответчик **Azerty**...')
-    bot.process_commands(message)
+        
+        if message.author.id in users:
+            pass
+        else:
+            users.append(message.author.id)
+            await message.channel.send('Привет! Я автоответчик **Azerty**...')
+    await bot.process_commands(message)
 @bot.command()
 async def help(ctx):
     emb = discord.Embed(title = 'Я Азерти', color = discord.Color.random())

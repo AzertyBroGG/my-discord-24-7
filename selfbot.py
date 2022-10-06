@@ -10,6 +10,7 @@ async def on_ready():
     print(bot.user.id)
 @bot.event
 async def on_message(message):
+    await bot.process_commands(message)
     if message.author.id == bot.user.id:
         return
     if isinstance(message.channel, discord.DMChannel):
@@ -19,7 +20,7 @@ async def on_message(message):
         else:
             users.append(message.author.id)
             await message.channel.send('Привет! Я автоответчик **Azerty**...')
-    await bot.process_commands(message)
+    
 @bot.command()
 async def help(ctx):
     emb = discord.Embed(title = 'Я Азерти', color = discord.Color.random())

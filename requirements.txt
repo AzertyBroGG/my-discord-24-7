@@ -2,3 +2,4 @@ asyncio
 discord.py-self
 discord.py-self-embed
 requests
+bs4

@@ -3,6 +3,8 @@ from discord.ext import commands
 bot = commands.Bot(command_prefix = '.', help_command = None, self_bot = True)
 @bot.event
 async def on_ready():
+    activity = discord.Game(name="SelfBot | .help")
+    await bot.change_presence(status=discord.Status.idle, activity=activity)
     print(bot.user.name)
     print(bot.user.id)
 @bot.command()

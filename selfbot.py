@@ -1,5 +1,6 @@
 import discord, asyncio, os
 from discord.ext import commands
+from discord_self_embed import Embed
 users = []
 bot = commands.Bot(command_prefix = '.', help_command = None, self_bot = True)
 @bot.event

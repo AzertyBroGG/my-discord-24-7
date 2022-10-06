@@ -7,6 +7,10 @@ async def on_ready():
     await bot.change_presence(status=discord.Status.idle, activity=activity)
     print(bot.user.name)
     print(bot.user.id)
+@bot.event
+async def on_message(message):
+    if isinstance(message.channel, discord.DMChannel):
+        await message.channel.send('._.')
 @bot.command()
 async def help(ctx):
     await ctx.send(embed = discord.Embed(title = 'Я Азерти', color = discord.Color.random()))

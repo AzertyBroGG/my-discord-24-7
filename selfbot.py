@@ -5,7 +5,7 @@ users = []
 bot = commands.Bot(command_prefix = '.', help_command = None, self_bot = True)
 @bot.event
 async def on_ready():
-    activity = discord.Game(name="SelfBot | .help", large_image_url = "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/AZERTY_keyboard_layout.JPG/1200px-AZERTY_keyboard_layout.JPG")
+    activity = discord.Activity(name="Автоответчик включен!", status = discord.ActivityType.custom, large_image_url = "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/AZERTY_keyboard_layout.JPG/1200px-AZERTY_keyboard_layout.JPG")
     await bot.change_presence(status=discord.Status.idle, activity=activity)
     print(bot.user.name)
     print(bot.user.id)
@@ -20,7 +20,7 @@ async def on_message(message):
             pass
         else:
             users.append(message.author.id)
-            await message.channel.send('Привет! Я автоответчик **Azerty**...')
+            await message.channel.send('Привет! Я автоответчик **Azerty**. \nПожалуйста, опишите вашу проблему. \nСкоро он появится в Сети...')
     
 @bot.command()
 async def help(ctx):
